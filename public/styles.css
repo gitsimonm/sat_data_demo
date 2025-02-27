@@ -7,3 +7,28 @@ html, body {
     height : 600px;
     width : 800px;
 }
+
+.form-group {
+    margin-bottom: 1rem;
+}
+input {
+    width : 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border : 1px solid #ddd;
+}
+button {
+    width : 100%;
+    padding : 10px;
+    background-color: red;
+    color : white;
+    border : none;
+    cursor : pointer;
+}
+button:hover {
+    background-color: lightcoral;
+}
+.error {
+    color: red;
+    display : none;
+}
