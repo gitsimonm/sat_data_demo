@@ -10,9 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static('public'));
 
-const sentinel_TOKEN = process.env.sentinel_TOKEN;
-const sentinel_API = '';
-const {APP_USERNAME, APP_PASSWORD} = process.env;
+const {PORT, APP_USERNAME, APP_PASSWORD, SENTINEL_TOKEN, SENTINEL_API} = process.env;
 
 // ROUTES
 
@@ -42,9 +40,9 @@ app.post('/login', (req, res) => {
 // proxy endpoint
 app.get('/api/posts', async (req, res) => {
     try {
-        const response = await axios.get(`${sentinel_API}/posts`, {
+        const response = await axios.get(`${SENTINEL_API}/posts`, {
             headers : {
-                Authorization : `Bearer ${sentinel_TOKEN}`
+                Authorization : `Bearer ${SENTINEL_TOKEN}`
             }
         });
         res.json(response.data);
