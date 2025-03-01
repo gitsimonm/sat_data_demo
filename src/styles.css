@@ -1,0 +1,49 @@
+#map {
+    height : 600px;
+    width : 800px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+input {
+    width : 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border : 1px solid #ddd;
+}
+button {
+    width : 100%;
+    padding : 10px;
+    background-color: red;
+    color : white;
+    border : none;
+    cursor : pointer;
+}
+button:hover {
+    background-color: lightcoral;
+}
+.error {
+    color: red;
+    display : none; 
+}
+
+#instruction1{
+    display: flex;
+    align-items: center;
+}
+
+#rectDrawButton {
+    padding: 0rem 0.5rem 0rem 0.5rem; 
+    width: 24px;
+    height: 24px;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
+#controls {
+    padding : 0.5rem;
+}

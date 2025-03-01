@@ -11,6 +11,11 @@
 //     errorDiv.textContent = msg;
 //     setTimeout(() => {errorDiv.textContent = '', 3000});
 // }
+import './styles.css';
+import "leaflet/dist/leaflet.css";
+import * as L from 'leaflet';
+import "leaflet-draw/dist/leaflet.draw.js"; 
+import "leaflet-draw/dist/leaflet.draw.css"; 
 
 function createMap() {
     var map = L.map('map').setView([51.505, -0.09], 13);
@@ -46,3 +51,4 @@ function createMap() {
         
 }
 
+createMap();

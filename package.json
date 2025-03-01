@@ -4,16 +4,36 @@
   "description": "Demo Sat Data Tool",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node index.js",
+    "dev": "npm run build && nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Simon Martin",
   "license": "UNLICENSED",
   "dependencies": {
     "axios": "^1.8.1",
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
     "cors": "^2.8.5",
+    "css-loader": "^7.1.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-session": "^1.18.1"
+    "express-session": "^1.18.1",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "leaflet": "^1.9.4",
+    "leaflet-draw": "^1.0.4",
+    "mini-css-extract-plugin": "^2.9.2",
+    "mongodb": "5.5",
+    "mongoose": "^8.11.0",
+    "nodemon": "^3.1.9",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
   }
 }
