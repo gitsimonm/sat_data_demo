@@ -33,6 +33,7 @@ mongoose.connect(MONGODB_URI)
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
+app.set('trust proxy', 1);
 
 app.use(session({
     secret : SESSION_SECRET,
@@ -46,6 +47,7 @@ app.use(session({
     cookie : {
         httpOnly : true,
         secure : process.env.NODE_ENV === 'production',
+        sameSite : 'lax',
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     }
 }));
