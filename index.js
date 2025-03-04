@@ -14,7 +14,7 @@ const getSentinelToken = require('./utils/sentinelAuth');
 
 const app = express();
 
-const {SESSION_SECRET, PORT, SENTINEL_TOKEN, SENTINEL_API, MONGODB_URI} = process.env;
+const {SESSION_SECRET, PORT, MONGODB_URI} = process.env;
 
 // database connection
 mongoose.connect(MONGODB_URI)
@@ -63,7 +63,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/login', (req, res) => {
+app.get(['/login', '/login/'], (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/login/login.html'));
 });
 
