@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
+const session = require('express-session');
 const axios = require('axios');
 const cors = require('cors');
-const session = require('express-session');
 const path = require('path');
 const passport = require('passport');
 require('./config/passport');
@@ -52,12 +52,14 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/auth', authRoutes);
 app.use('/api', sentinelRoutes);
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.url}`);
+    console.log("Session ID:", req.sessionID);
+    console.log("Session Data:", req.session);
     next();
 });
 
