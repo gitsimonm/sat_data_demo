@@ -3,30 +3,6 @@
     width : 800px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
-input {
-    width : 100%;
-    padding: 8px;
-    margin-top: 4px;
-    border : 1px solid #ddd;
-}
-button {
-    width : 100%;
-    padding : 10px;
-    background-color: red;
-    color : white;
-    border : none;
-    cursor : pointer;
-}
-button:hover {
-    background-color: lightcoral;
-}
-.error {
-    color: red;
-    display : none; 
-}
 
 #instruction1{
     display: flex;
@@ -405,12 +381,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-radius: 5px;
 	}
 .leaflet-control-layers-toggle {
-	background-image: url(/dist/416d91365b44e4b4f477.png);
+	background-image: url(../images/416d91365b44e4b4f477.png);
 	width: 36px;
 	height: 36px;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
-	background-image: url(/dist/8f2c4d11474275fbc161.png);
+	background-image: url(../images/8f2c4d11474275fbc161.png);
 	background-size: 26px 26px;
 	}
 .leaflet-touch .leaflet-control-layers-toggle {
@@ -453,7 +429,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 /* Default icon URLs */
 .leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
-	background-image: url(/dist/2b3e1faf89f94a483539.png);
+	background-image: url(../images/2b3e1faf89f94a483539.png);
 	}
 
 
@@ -709,7 +685,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		}
 	}
 
-.leaflet-draw-section{position:relative}.leaflet-draw-toolbar{margin-top:12px}.leaflet-draw-toolbar-top{margin-top:0}.leaflet-draw-toolbar-notop a:first-child{border-top-right-radius:0}.leaflet-draw-toolbar-nobottom a:last-child{border-bottom-right-radius:0}.leaflet-draw-toolbar a{background-image:url(/dist/ef32ea2bdf63ba132b4c.png);background-image:linear-gradient(transparent,transparent),url(/dist/a4e0eb7ad904a4858361.svg);background-repeat:no-repeat;background-size:300px 30px;background-clip:padding-box}.leaflet-retina .leaflet-draw-toolbar a{background-image:url(/dist/7ea3a6d428136b87ab95.png);background-image:linear-gradient(transparent,transparent),url(/dist/a4e0eb7ad904a4858361.svg)}
+.leaflet-draw-section{position:relative}.leaflet-draw-toolbar{margin-top:12px}.leaflet-draw-toolbar-top{margin-top:0}.leaflet-draw-toolbar-notop a:first-child{border-top-right-radius:0}.leaflet-draw-toolbar-nobottom a:last-child{border-bottom-right-radius:0}.leaflet-draw-toolbar a{background-image:url(../images/ef32ea2bdf63ba132b4c.png);background-image:linear-gradient(transparent,transparent),url(../images/a4e0eb7ad904a4858361.svg);background-repeat:no-repeat;background-size:300px 30px;background-clip:padding-box}.leaflet-retina .leaflet-draw-toolbar a{background-image:url(../images/7ea3a6d428136b87ab95.png);background-image:linear-gradient(transparent,transparent),url(../images/a4e0eb7ad904a4858361.svg)}
 .leaflet-draw a{display:block;text-align:center;text-decoration:none}.leaflet-draw a .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.leaflet-draw-actions{display:none;list-style:none;margin:0;padding:0;position:absolute;left:26px;top:0;white-space:nowrap}.leaflet-touch .leaflet-draw-actions{left:32px}.leaflet-right .leaflet-draw-actions{right:26px;left:auto}.leaflet-touch .leaflet-right .leaflet-draw-actions{right:32px;left:auto}.leaflet-draw-actions li{display:inline-block}
 .leaflet-draw-actions li:first-child a{border-left:0}.leaflet-draw-actions li:last-child a{-webkit-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}.leaflet-right .leaflet-draw-actions li:last-child a{-webkit-border-radius:0;border-radius:0}.leaflet-right .leaflet-draw-actions li:first-child a{-webkit-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}.leaflet-draw-actions a{background-color:#919187;border-left:1px solid #AAA;color:#FFF;font:11px/19px "Helvetica Neue",Arial,Helvetica,sans-serif;line-height:28px;text-decoration:none;padding-left:10px;padding-right:10px;height:28px}
 .leaflet-touch .leaflet-draw-actions a{font-size:12px;line-height:30px;height:30px}.leaflet-draw-actions-bottom{margin-top:0}.leaflet-draw-actions-top{margin-top:1px}.leaflet-draw-actions-top a,.leaflet-draw-actions-bottom a{height:27px;line-height:27px}.leaflet-draw-actions a:hover{background-color:#a0a098}.leaflet-draw-actions-top.leaflet-draw-actions-bottom a{height:26px;line-height:26px}.leaflet-draw-toolbar .leaflet-draw-draw-polyline{background-position:-2px -2px}.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-polyline{background-position:0 -1px}

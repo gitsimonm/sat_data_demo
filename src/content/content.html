@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Sat Data Ingest</h1>
-    <p id="instruction1">Start by drawing a rectangle using the <img id="rectDrawButton" src="rectangle_button.png"> button.</p>
+    <p id="instruction1">Start by drawing a rectangle using the <img id="rectDrawButton"> button.</p>
     <div id="content">
         <div id="map"></div>
         <div id="controls">
@@ -16,8 +16,9 @@
                 <label for="timestamp">Enter a date and time:</label>
                 <input id="timestamp" type="datetime-local" name="image-date" />
             </form>
+            <button id="searchbutton">Search</button>
         </div>
     </div>
-    <a href="/logout">Logout</a>
+    <a href="/auth/logout">Logout</a>
 </body>
 </html>

@@ -1,0 +1,25 @@
+#map {
+    height : 600px;
+    width : 800px;
+}
+
+
+#instruction1{
+    display: flex;
+    align-items: center;
+}
+
+#rectDrawButton {
+    padding: 0rem 0.5rem 0rem 0.5rem; 
+    width: 24px;
+    height: 24px;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
+#controls {
+    padding : 0.5rem;
+}

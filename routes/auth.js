@@ -1,31 +1,46 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const User = require('../models/user');
-const { model } = require('mongoose');
+// const User = require('../models/user');
 const user = require('../models/user');
+// const { getSentinelToken } = require('../utils/sentinelAuth.js');  
 
-router.post('/login', (req, res, next) => {
-    const {email, password} = req.body;
+router.post('/login', async (req, res, next) => {
+    const { email, password } = req.body;
     if (!email || !password) {
-        return res.status(400).json({error:'Email and password are required'});
+        return res.status(400).json({ error: 'Email and password are required' });
     }
-    passport.authenticate('local', (err, user, info) => {
+
+    passport.authenticate('local', async (err, user, info) => {
         if (err) return next(err);
-        if (!user) return res.status(401).json({error:info.message});
-        req.login(user, (err) => {
+        if (!user) return res.status(401).json({ error: info.message });
+
+        req.login(user, async (err) => {
             if (err) return next(err);
-            console.log('success!')
-            console.log(user)
-            return res.redirect('/content');
+            res.redirect('/content');
         });
     })(req, res, next);
 });
 
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
+};
 
-router.post('/logout', (req, res) => {
-    req.logout();
-    res.json({message : 'Logged out succesfully'});
+router.post('/logout', (req, res, next) => {
+    req.logout((err) => {
+        if (err) return next(err);
+        
+        req.session.destroy((err) => {
+            if (err) {
+                console.error('Session destruction error:', err);
+                return res.status(500).json({ error: 'Failed to log out' });
+            }
+            res.clearCookie('connect.sid'); // Remove session cookie
+            res.json({ message: 'Logged out successfully' });
+        });
+    });
 });
 
-module.exports = router;
+
+module.exports = { router, isAuthenticated };
