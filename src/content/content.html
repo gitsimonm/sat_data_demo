@@ -8,15 +8,26 @@
 </head>
 <body>
     <h1>Sat Data Ingest</h1>
-    <p id="instruction1">Start by drawing a rectangle using the <img id="rectDrawButton"> button.</p>
+    <p id="instruction1">Start by drawing a rectangle using the <img id="rectDrawIcon"> button.</p>
     <div id="content">
         <div id="map"></div>
         <div id="controls">
-            <form>
-                <label for="timestamp">Enter a date and time:</label>
-                <input id="timestamp" type="datetime-local" name="image-date" />
+            <form id="paramsForm">
+                <div>
+                    <label for="timestamp">Enter a date and time:</label>
+                    <input id="timestamp" type="datetime-local" name="image-date" />
+                </div>
+                <div>
+                    <label for="timePeriod">Timespan in days:</label>
+                    <input id="timePeriod" type="number" name="timePeriod" value="5" required min="1" max="31"/>
+                </div>
             </form>
-            <button id="searchbutton">Search</button>
+            <div id="timePeriodDisplay"></div>
+            <button id="searchbutton">Add sat data</button>
+            <p id="warningMsg">Rectangle is too large, edit it using <img id="rectEditIcon"> and try again!</p>
+            <div id="footer">
+                <button id="clearImagesButton">Clear all</button>
+            </div>
         </div>
     </div>
     <a href="/auth/logout">Logout</a>

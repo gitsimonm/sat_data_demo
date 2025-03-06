@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-#rectDrawButton {
+#rectDrawIcon, #rectEditIcon {
     padding: 0rem 0.5rem 0rem 0.5rem; 
     width: 24px;
     height: 24px;
@@ -22,4 +22,27 @@
 
 #controls {
     padding : 0.5rem;
+}
+
+#warningMsg {
+    display: none;
+    align-items: center;
+}
+
+#timePeriod {
+    width: 3em;
+}
+
+#timePeriodDisplay {
+    padding : 0.5rem 0rem 0.5rem 0rem; 
+}
+
+#footer {
+    padding-top: 0.5rem;
+}
+
+#paramsForm {
+    display : flex;
+    flex-direction: column;
+    gap : 0.5rem;
 }
