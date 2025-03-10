@@ -20,8 +20,7 @@ router.post('/sentinel-data', ensureAuthenticated, async (req, res) => {
         
         // Allow-list of acceptable URLs
         const allowedURLs = [
-            'https://api.sentinel.example.com/data',
-            'https://api.sentinel.example.com/other-endpoint'
+            'https://services.sentinel-hub.com/api/v1/process'
         ];
         
         if (!allowedURLs.includes(requestURL)) {
