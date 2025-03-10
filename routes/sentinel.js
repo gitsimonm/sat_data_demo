@@ -17,6 +17,17 @@ router.post('/sentinel-data', ensureAuthenticated, async (req, res) => {
         const token = await getSentinelToken();
         const requestData = req.body.body;
         const requestURL = req.body.url;
+        
+        // Allow-list of acceptable URLs
+        const allowedURLs = [
+            'https://api.sentinel.example.com/data',
+            'https://api.sentinel.example.com/other-endpoint'
+        ];
+        
+        if (!allowedURLs.includes(requestURL)) {
+            return res.status(400).json({ error: 'Invalid URL' });
+        }
+        
         const response = await fetch(requestURL, {
             method : "POST",
             headers: { 
