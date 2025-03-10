@@ -11,6 +11,7 @@ require('./config/passport');
 const { router: authRoutes, isAuthenticated } = require('./routes/auth');
 const sentinelRoutes = require('./routes/sentinel');
 const getSentinelToken = require('./utils/sentinelAuth');
+const RateLimit = require('express-rate-limit');
 
 const app = express();
 
@@ -54,6 +55,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+const limiter = RateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+});
+
 app.use('/auth', authRoutes);
 app.use('/api', sentinelRoutes);
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -74,7 +81,7 @@ app.get('/', (req, res) => {
     res.redirect('/login');
 });
 
-app.get('/content', isAuthenticated, (req, res) => {
+app.get('/content', limiter, isAuthenticated, (req, res) => {
     console.log('Auth check:', req.isAuthenticated());
     res.set({
         'Content-Security-Policy' : "default-src 'self'; img-src 'self' https://tile.openstreetmap.org blob: data:;",
