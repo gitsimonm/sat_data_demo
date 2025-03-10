@@ -31,7 +31,8 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "style-loader": "^4.0.0",
-    "webpack": "^5.98.0"
+    "webpack": "^5.98.0",
+    "express-rate-limit": "^7.5.0"
   },
   "devDependencies": {
     "webpack-cli": "^6.0.1"
