@@ -3,7 +3,14 @@ const axios = require('axios');
 const getSentinelToken = require('../utils/sentinelAuth');
 const fetch = require('node-fetch');
 const router = express.Router();
+const RateLimit = require('express-rate-limit');
+
 router.use(express.json());
+
+const limiter = RateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+});
 
 // middleware
 function ensureAuthenticated(req, res, next) {
@@ -12,7 +19,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // route
-router.post('/sentinel-data', ensureAuthenticated, async (req, res) => {
+router.post('/sentinel-data', limiter, ensureAuthenticated, async (req, res) => {
     try {
         const token = await getSentinelToken();
         const requestData = req.body.body;
