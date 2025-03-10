@@ -34,6 +34,9 @@ function setupDefaults () {
 
     dateTimeInput.value = setCurrentTime();
     updateTimePeriodDisplay();
+
+    let creditYear = document.getElementById('currentYear');
+    creditYear.innerText = new Date().getFullYear();
 }
 
 function updateTimePeriodDisplay () {

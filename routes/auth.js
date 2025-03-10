@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-// const User = require('../models/user');
 const user = require('../models/user');
-// const { getSentinelToken } = require('../utils/sentinelAuth.js');  
 
 router.post('/login', async (req, res, next) => {
     const { email, password } = req.body;

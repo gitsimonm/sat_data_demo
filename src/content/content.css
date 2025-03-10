@@ -46,3 +46,11 @@
     flex-direction: column;
     gap : 0.5rem;
 }
+
+.heading {
+    font-weight: bold;
+}
+
+#notes {
+    max-width: 400px;
+}
