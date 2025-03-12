@@ -1,5 +1,7 @@
 # Sat-Data-Demo
 
+![alt text](/sat-data-demo.png?raw=true)
+
 Sat-Data-Demo is a NodeJS app for ingesting and analysing satellite data. 
 
 It allows users to create Areas of Interest (AOIs) and fill them with real-time processing requests from the Senintel Hub's multi-spectral, multi-temporal big data satellite imagery service.  
