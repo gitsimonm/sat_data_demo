@@ -72,7 +72,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get(['/login', '/login/'], (req, res) => {
+app.get(['/login', '/login/'], limiter, (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/login/login.html'));
 });
 
