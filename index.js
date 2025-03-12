@@ -98,5 +98,5 @@ app.use((req, res) => {
 
 // start server
 app.listen(PORT, () => {
-    console.log(`Server running on post ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

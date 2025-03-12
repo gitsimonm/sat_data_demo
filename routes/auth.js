@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const user = require('../models/user');
+const RateLimit = require('express-rate-limit');
 
 const limiter = RateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
