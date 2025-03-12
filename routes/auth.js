@@ -3,7 +3,12 @@ const router = express.Router();
 const passport = require('passport');
 const user = require('../models/user');
 
-router.post('/login', async (req, res, next) => {
+const limiter = RateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // max 100 requests per windowMs
+});
+
+router.post('/login', limiter, async (req, res, next) => {
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ error: 'Email and password are required' });
